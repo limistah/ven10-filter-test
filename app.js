@@ -7,7 +7,6 @@ const mongoose = require("mongoose");
 app.use("/api", createAPI(app));
 
 app.on("listening", function () {
-  console.log(process.env.DB_URL);
   mongoose.connect(
     process.env.DB_URL,
     { useNewUrlParser: true, useUnifiedTopology: true },
