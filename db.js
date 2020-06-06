@@ -4,6 +4,10 @@ const csvtojsonV2 = require("csvtojson/v2");
 const filters = require("./docs/filters.json");
 const seedCarOwners = require("./libs/seedCarOwners");
 const seedFilters = require("./libs/seedFilters");
+const carOwnersFile =
+  process.env.NODE_ENV === "test"
+    ? "./docs/car_owners_test.csv"
+    : "./docs/car_owners.csv";
 module.exports = function (app) {
   mongoose.connect(
     process.env.DB_URL,
@@ -14,7 +18,7 @@ module.exports = function (app) {
         process.exit(1);
       }
       csvtojsonV2()
-        .fromFile("./docs/car_owners.csv")
+        .fromFile(carOwnersFile)
         .then((jsonObj) => seedCarOwners(jsonObj));
       seedFilters(filters);
     }
