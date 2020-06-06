@@ -14,7 +14,7 @@ module.exports = function (app) {
         process.exit(1);
       }
       csvtojsonV2()
-        .fromFile("./docs/car_owners_test.csv")
+        .fromFile("./docs/car_owners.csv")
         .then((jsonObj) => seedCarOwners(jsonObj));
       seedFilters(filters);
     }
