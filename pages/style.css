@@ -28,7 +28,7 @@ body,
 }
 
 .filter-container {
-  width: 20vw;
+  width: 20%;
 }
 
 ul {
@@ -70,7 +70,7 @@ ul {
 }
 
 .result-container {
-  width: calc(80vw);
+  width: 80%;
   padding-left: 2em;
   padding-right: 2em;
 }

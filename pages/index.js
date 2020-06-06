@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Filters from "../components/Filters";
+import FilterResult from "../components/FilterResult";
 
 function index() {
   const [isApplyingFilter, setIsApplyingFilter] = useState(false);
@@ -49,6 +50,9 @@ function index() {
               No Data / Empty Result <br />{" "}
               <small className="">Use a filter from the left column</small>{" "}
             </div>
+          )}
+          {filterResult.data && (filterResult.data.length || "") && (
+            <FilterResult result={filterResult} />
           )}
         </div>
       </div>
