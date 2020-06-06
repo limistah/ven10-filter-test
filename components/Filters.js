@@ -3,14 +3,20 @@ import React, { useState, useEffect } from "react";
 const FilterItem = ({ onApply, filter }) => {
   return (
     <li className="filter-list-item">
-      <span className="filter-list-item-start-year">{filter.start_year}</span>
-      <span className="filter-list-item-end-year">{filter.end_year}</span>
+      <span className="filter-list-item-year">
+        {filter.start_year} - {filter.end_year}
+      </span>
+      <span className="filter-list-item-gender">{filter.gender}</span>
       <span className="filter-list-item-countries">
         {filter.countries.join(", ")}
       </span>
       <span className="filter-list-item-colours">
         {filter.colors.map((color) => (
-          <span style={{ backgroundColor: color.toLowerCase() }}>{color}</span>
+          <>
+            {color && (
+              <span style={{ backgroundColor: color.toLowerCase() }}> </span>
+            )}
+          </>
         ))}
       </span>
     </li>
