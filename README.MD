@@ -12,6 +12,8 @@ CD into the directory
 Install the dependencies
 `npm install` or `yarn install`
 
+Then copy the content of the `.env.example` to `.env` and update accordingly.
+
 ## Running the application
 
 `npm run start` or `yarn start`
