@@ -21,7 +21,6 @@ describe("/", () => {
 
   it("should return 404 for unregistered routes", async () => {
     const result = await exec("/unknown");
-    // console.log(result);
     expect(result.status).toBe(404);
     expect(result.body.error).toBeTruthy();
     expect(result.body.error.msg).toBeTruthy();
