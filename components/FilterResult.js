@@ -13,11 +13,11 @@ function FilterResult({ result }) {
             <span>Email: {result.email}</span>
             <span>Gender: {result.gender}</span>
             <span>Job Title: {result.job_title}</span>
-            <span>Bio: {result.bio}</span>
             <span>Country: {result.country}</span>
             <span>Car Model: {result.car_model}</span>
             <span>Car Color: {result.car_color}</span>
             <span>Car Model Year: {result.car_model_year}</span>
+            <span>Bio: {result.bio}</span>
           </li>
         );
       })}
