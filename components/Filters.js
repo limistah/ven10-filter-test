@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-const FilterItem = ({ onApply, filter }) => {
+const FilterItem = ({ onApply, filter, onSetActive, isActive }) => {
   return (
-    <li className="filter-list-item" onClick={() => onApply(filter)}>
+    <li
+      className={`filter-list-item ${isActive ? "active" : ""}`.trim()}
+      onClick={() => {
+        onSetActive(filter._id);
+        onApply(filter);
+      }}
+    >
       <span className="filter-list-item-year">
         {filter.start_year} - {filter.end_year}
       </span>
@@ -25,6 +31,9 @@ const FilterItem = ({ onApply, filter }) => {
 
 const Filters = ({ onApply }) => {
   const [filters, setFilters] = useState({ data: [] });
+  const [activeId, setActiveId] = useState(10000);
+
+  const handleSetActive = (id) => setActiveId(id);
 
   useEffect(() => {
     fetch("/api/filters").then(async (res) => {
@@ -41,8 +50,14 @@ const Filters = ({ onApply }) => {
       {filters &&
         filters.data &&
         (filters.data.length || null) &&
-        filters.data.map((filter) => (
-          <FilterItem key={filter._id} onApply={onApply} filter={filter} />
+        filters.data.map((filter, index) => (
+          <FilterItem
+            isActive={filter._id === activeId}
+            key={filter._id}
+            onApply={onApply}
+            onSetActive={handleSetActive}
+            filter={filter}
+          />
         ))}
     </ul>
   );

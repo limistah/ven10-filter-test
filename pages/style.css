@@ -55,7 +55,8 @@ ul {
   cursor: pointer;
 }
 
-.filter-list-item:hover {
+.filter-list-item:hover,
+.filter-list-item.active {
   background-color: gainsboro;
 }
 
