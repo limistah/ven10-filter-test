@@ -8,6 +8,7 @@ module.exports = function apiRoutes(app) {
   });
   // Filters
   router.get("/filters", filtersHandler.fetchFilters);
+  // Car owners
   router.get("/car-owners", carOwnersHandler.fetchCarOwners);
   router.post("/car-owners/filter", carOwnersHandler.filterCarOwners);
   // Unregistered routes
