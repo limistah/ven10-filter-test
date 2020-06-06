@@ -24,6 +24,7 @@ function index() {
   };
 
   const handleAppyFilter = (filter) => {
+    setFilterResult({ data: [] });
     location.replace("#pageHead");
     setIsApplyingFilter(true);
     applyFilter(filter, (json) => {
