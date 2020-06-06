@@ -7,11 +7,11 @@ React components for next application can be found at: `/pages` and `/components
 ## Installation
 
 `git clone git@github.com:limistah/ven10-filter-test.git`
+
 CD into the directory
 `cd ven10-filter-test`
 Install the dependencies
-`npm install` or `yarn install`
-
+`` npm install` or `yarn install ``
 Then copy the content of the `.env.example` to `.env` and update accordingly.
 
 ## Running the application
@@ -24,4 +24,4 @@ Then copy the content of the `.env.example` to `.env` and update accordingly.
 
 ## Credits
 
-Built with 💕💕💕 by [Aleem Isiaka](aleemisiaka.com)
+Built with 💕💕💕 by [Aleem Isiaka](https://aleemisiaka.com)
