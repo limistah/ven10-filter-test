@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const FilterItem = ({ onApply, filter }) => {
   return (
-    <li className="filter-list-item">
+    <li className="filter-list-item" onClick={() => onApply(filter)}>
       <span className="filter-list-item-year">
         {filter.start_year} - {filter.end_year}
       </span>

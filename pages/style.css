@@ -67,3 +67,15 @@ ul {
   margin: 5px;
   border: 1px solid gainsboro;
 }
+
+.result-container {
+  width: calc(80vw);
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.applying-filter {
+  padding-top: 1em;
+
+  text-align: center;
+  font-size: 2em;
+}
