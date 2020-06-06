@@ -13,7 +13,6 @@ module.exports = function (app) {
         console.log(err);
         process.exit(1);
       }
-      console.log("DB Connected");
       csvtojsonV2()
         .fromFile("./docs/car_owners_test.csv")
         .then((jsonObj) => seedCarOwners(jsonObj));
