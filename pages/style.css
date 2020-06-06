@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+html,
+body,
+#__next,
+.page {
+  height: 100%;
+  width: 100%;
+}
+
+.page {
+  overflow-y: scroll;
+  background-color: azure;
+}
+
+.header {
+  text-align: center;
+}
+
+.content {
+  padding: 5em;
+  display: flex;
+}
+
+.filter-container {
+  width: 20%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.filters {
+  display: grid;
+  grid-gap: 1em;
+}
+
+.filter-list-item {
+  font-size: 1.5em;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid goldenrod;
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.filter-list-item:hover,
+.filter-list-item.active {
+  background-color: gainsboro;
+}
+
+.filter-list-item-colours > span {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 1000px;
+  margin: 5px;
+  border: 1px solid gainsboro;
+}
+
+.result-container {
+  width: 80%;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.applying-filter,
+.empty-data {
+  padding-top: 1em;
+
+  text-align: center;
+  font-size: 2em;
+}
+
+.empty-data small {
+  font-size: 0.5em;
+  color: gray;
+}
+
+.filter-result-list {
+  display: grid;
+  grid-gap: 2em;
+}
+
+.filter-result-list-item {
+  display: grid;
+  padding: 2em;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+.filter-result-list-item > span {
+  border-bottom: 1px solid gainsboro;
+  padding: 15px 0;
+}
+
+.filter-result-list-item > span:last-of-type {
+  border: 0;
+}
