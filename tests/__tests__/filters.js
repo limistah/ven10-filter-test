@@ -21,6 +21,5 @@ describe("/filters", () => {
     const result = await exec("/filters");
     expect(result.status).toBe(200);
     expect(result.body).toHaveProperty("data", "limit", "page", "total");
-    expect(result.body.data).toBeInstanceOf(Array);
   });
 });

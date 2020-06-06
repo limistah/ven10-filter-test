@@ -4,10 +4,7 @@ function seedCarOwners(carOwners) {
   CarOwners.find()
     .countDocuments()
     .then((totalCarOwners) => {
-      if (
-        totalCarOwners < carOwners.length &&
-        process.env.NODE_ENV !== "development"
-      ) {
+      if (totalCarOwners < carOwners.length) {
         console.log("Seeding Car Owners");
         CarOwners.deleteMany({}).exec();
         for (let i = 0; i < carOwners.length; i++) {
