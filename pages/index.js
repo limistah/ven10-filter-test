@@ -5,9 +5,29 @@ function index() {
   const [isApplyingFilter, setIsApplyingFilter] = useState(false);
   const [filterResult, setFilterResult] = useState({ data: [] });
 
+  const applyFilter = (filter, doneCB = () => {}) => {
+    fetch("/api/car-owners/filter", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(filter),
+    }).then(async (res) => {
+      let json = {};
+      if (res.ok) {
+        json = await res.json();
+      }
+      doneCB(json);
+    });
+  };
+
   const handleAppyFilter = (filter) => {
     console.log(filter);
     setIsApplyingFilter(true);
+    applyFilter(filter, (json) => {
+      console.log(json);
+    });
   };
   return (
     <div className="page">
