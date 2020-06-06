@@ -6,8 +6,10 @@ function index() {
     <div className="page">
       <h2 className="header">Ven10 Filter MERN Test</h2>
       <div className="content">
-        <Filters />
-        <div className="results"></div>
+        <div className="filter-container">
+          <Filters />
+        </div>
+        <div className="result-container"></div>
       </div>
     </div>
   );
