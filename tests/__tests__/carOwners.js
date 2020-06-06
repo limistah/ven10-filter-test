@@ -24,4 +24,9 @@ describe("/car-owners", () => {
     expect(result.body.data.length).toBeDefined();
     expect(result.body.data.length).toBeGreaterThan(0);
   });
+
+  it("POST / exists", async () => {
+    const result = await exec("/car-owners/filter", "post");
+    expect(result.status).toBe(200);
+  });
 });

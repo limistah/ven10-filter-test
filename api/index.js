@@ -9,6 +9,7 @@ module.exports = function apiRoutes(app) {
   // Filters
   router.get("/filters", filtersHandler.fetchFilters);
   router.get("/car-owners", carOwnersHandler.fetchCarOwners);
+  router.post("/car-owners/filter", carOwnersHandler.filterCarOwners);
   // Unregistered routes
   router.all("*", function handler(req, res, next) {
     return res.status(404).json({ error: { msg: "Not Found" } });

@@ -19,6 +19,11 @@ async function fetchCarOwners(req, res, next) {
   });
 }
 
+async function filterCarOwners(req, res, next) {
+  return res.status(200).json({});
+}
+
 module.exports = {
   fetchCarOwners,
+  filterCarOwners,
 };
