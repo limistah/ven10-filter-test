@@ -74,9 +74,15 @@ ul {
   padding-left: 2em;
   padding-right: 2em;
 }
-.applying-filter {
+.applying-filter,
+.empty-data {
   padding-top: 1em;
 
   text-align: center;
   font-size: 2em;
+}
+
+.empty-data small {
+  font-size: 0.5em;
+  color: gray;
 }

@@ -23,22 +23,32 @@ function index() {
   };
 
   const handleAppyFilter = (filter) => {
-    console.log(filter);
+    location.replace("#pageHead");
     setIsApplyingFilter(true);
     applyFilter(filter, (json) => {
-      console.log(json);
+      setFilterResult(json);
+      setIsApplyingFilter(false);
     });
   };
   return (
     <div className="page">
-      <h2 className="header">Ven10 Filter MERN Test</h2>
+      <h2 className="header" id="pageHead">
+        Ven10 Filter MERN Test
+      </h2>
       <div className="content">
         <div className="filter-container">
           <Filters onApply={handleAppyFilter} />
         </div>
-        <div className="result-container">
+        <div className="result-container" id="resultContainer">
           {isApplyingFilter && (
             <div className="applying-filter">Applying Filter...</div>
+          )}
+          {!isApplyingFilter && !filterResult.data.length && (
+            <div className="empty-data">
+              {" "}
+              No Data / Empty Result <br />{" "}
+              <small className="">Use a filter from the left column</small>{" "}
+            </div>
           )}
         </div>
       </div>
