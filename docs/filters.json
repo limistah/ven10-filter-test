@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "start_year": 2007,
+    "end_year": 2009,
+    "gender": "male",
+    "countries": ["Brazil", "Ireland", "Egypt", "Peru"],
+    "colors": ["Green", "Violet", "Yellow", "Blue"]
+  },
+  {
+    "id": 2,
+    "start_year": 1990,
+    "end_year": 2010,
+    "gender": "",
+    "countries": ["Russia", "Portugal", "Vietnam", "Croatia", "Uganda", "Iran"],
+    "colors": ["Teal", "Maroon", "Red", "Orange"]
+  },
+  {
+    "id": 3,
+    "start_year": 2001,
+    "end_year": 2009,
+    "gender": "female",
+    "countries": ["Poland", "Niger", "Greece"],
+    "colors": ["Red", "Aquamarine", "Orange", "Mauv"]
+  },
+  {
+    "id": 4,
+    "start_year": 1990,
+    "end_year": 2000,
+    "gender": "",
+    "countries": ["United States", "Portugal"],
+    "colors": ["Red"]
+  },
+  {
+    "id": 5,
+    "start_year": 2000,
+    "end_year": 2009,
+    "gender": "",
+    "countries": [
+      "Myanmar",
+      "South Africa",
+      "Nicaragua",
+      "Finland",
+      "Cuba",
+      "Mexico"
+    ],
+    "colors": []
+  },
+  {
+    "id": 6,
+    "start_year": 2005,
+    "end_year": 2010,
+    "gender": "",
+    "countries": ["South Africa", "Cuba", "Niger", "Egypt", "Uganda", "Kenya"],
+    "colors": [
+      "Red",
+      "Aquamarine",
+      "Orange",
+      "Mauv",
+      "Green",
+      "Violet",
+      "Yellow",
+      "Blue",
+      "Teal",
+      "Maroon",
+      "Orange"
+    ]
+  }
+]
