@@ -86,3 +86,16 @@ ul {
   font-size: 0.5em;
   color: gray;
 }
+
+.filter-result-list {
+  display: grid;
+  grid-gap: 2em;
+}
+
+.filter-result-list-item {
+  display: grid;
+  grid-gap: 0.2em;
+  padding: 2em;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+}
