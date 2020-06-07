@@ -17,10 +17,10 @@ module.exports = function (app) {
         console.log(err);
         process.exit(1);
       }
-      csvtojsonV2()
-        .fromFile(carOwnersFile)
-        .then((jsonObj) => seedCarOwners(jsonObj));
-      seedFilters(filters);
+      // csvtojsonV2()
+      //   .fromFile(carOwnersFile)
+      //   .then((jsonObj) => seedCarOwners(jsonObj));
+      // seedFilters(filters);
     }
   );
 };
