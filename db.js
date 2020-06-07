@@ -20,7 +20,6 @@ module.exports = function (app) {
       // csvtojsonV2()
       //   .fromFile(carOwnersFile)
       //   .then((jsonObj) => seedCarOwners(jsonObj));
-      // seedFilters(filters);
     }
   );
 };

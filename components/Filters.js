@@ -53,7 +53,7 @@ const Filters = ({ onApply }) => {
         filters.data.map((filter, index) => (
           <FilterItem
             isActive={filter._id === activeId}
-            key={filter._id}
+            key={filter._id + index}
             onApply={onApply}
             onSetActive={handleSetActive}
             filter={filter}

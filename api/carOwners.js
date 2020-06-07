@@ -27,10 +27,13 @@ async function filterCarOwners(req, res, next) {
     query.car_model_year = { $gte: start_year };
   }
   if (end_year) {
-    query.car_model_year = { ...(query.car_model_year || {}), $lte: end_year };
+    query.car_model_year = {
+      ...(query.car_model_year || {}),
+      $lte: end_year,
+    };
   }
   if (gender) {
-    query.gender = gender;
+    query.lowerCaseGender = gender.toLowerCase();
   }
   if (countries) {
     query.country = { $in: countries };
@@ -46,8 +49,8 @@ async function filterCarOwners(req, res, next) {
 
   const skip = limit * page;
 
-  const carOwners = await CarOwners.find(query).limit(limit).skip(skip);
-  const total = await CarOwners.find(query).countDocuments();
+  const carOwners = await CarOwners.find().limit(limit).skip(skip);
+  const total = await CarOwners.find().countDocuments();
 
   return res.status(200).json({
     data: carOwners,
