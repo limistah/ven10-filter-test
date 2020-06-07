@@ -4,7 +4,12 @@ import FilterResult from "../components/FilterResult";
 
 function index() {
   const [isApplyingFilter, setIsApplyingFilter] = useState(false);
-  const [filterResult, setFilterResult] = useState({ data: [] });
+  const [filterResult, setFilterResult] = useState({
+    data: [],
+    limit: 10,
+    page: 1,
+  });
+  const [filterData, setFilterData] = useState({});
 
   const applyFilter = (filter, doneCB = () => {}) => {
     fetch("/api/car-owners/filter", {
@@ -25,6 +30,7 @@ function index() {
 
   const handleAppyFilter = (filter) => {
     setFilterResult({ data: [] });
+    setFilterData(filter);
     location.replace("#pageHead");
     setIsApplyingFilter(true);
     applyFilter(filter, (json) => {
@@ -32,6 +38,27 @@ function index() {
       setIsApplyingFilter(false);
     });
   };
+
+  const handleLoadFunc = (page) => {
+    setIsApplyingFilter(true);
+    fetch(`/api/car-owners/filter?page=${page}&limit=10`, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(filterData),
+    }).then(async (res) => {
+      let json = {};
+      if (res.ok) {
+        json = await res.json();
+      }
+      json.data = [...json.data, ...filterResult.data];
+      setFilterResult(json);
+      setIsApplyingFilter(false);
+    });
+  };
+
   return (
     <div className="page">
       <h2 className="header" id="pageHead">
@@ -53,7 +80,7 @@ function index() {
             </div>
           )}
           {filterResult.data && (filterResult.data.length || "") && (
-            <FilterResult result={filterResult} />
+            <FilterResult result={filterResult} loadMoreFunc={handleLoadFunc} />
           )}
         </div>
       </div>

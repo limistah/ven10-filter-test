@@ -88,8 +88,10 @@ ul {
 }
 
 .filter-result-list {
+  height: 100vh;
   display: grid;
   grid-gap: 2em;
+  overflow: scroll;
 }
 
 .filter-result-list-item {

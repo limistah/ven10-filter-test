@@ -33,7 +33,11 @@ async function filterCarOwners(req, res, next) {
     };
   }
   if (gender) {
-    query.lowerCaseGender = gender.toLowerCase();
+    const genderFirstCapital = gender[0].toUpperCase();
+    let genderRest = gender.split("");
+    genderRest.splice(0, 1, "");
+    genderRest = genderRest.join("").trim();
+    query.gender = genderFirstCapital + genderRest;
   }
   if (countries) {
     query.country = { $in: countries };
@@ -49,8 +53,8 @@ async function filterCarOwners(req, res, next) {
 
   const skip = limit * page;
 
-  const carOwners = await CarOwners.find().limit(limit).skip(skip);
-  const total = await CarOwners.find().countDocuments();
+  const carOwners = await CarOwners.find(query).limit(limit).skip(skip);
+  const total = await CarOwners.find(query).countDocuments();
 
   return res.status(200).json({
     data: carOwners,
